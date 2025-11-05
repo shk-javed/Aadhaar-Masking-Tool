@@ -1,40 +1,40 @@
-# 🪪 Aadhaar Masking Tool  
-> A privacy-preserving AI tool that automatically detects and masks Aadhaar numbers from documents using **TesseractOCR**, **OpenCV**, and **Django**.
+# 🪪 Aadhaar Masking Tool
+
+**Privacy-preserving OCR app** that automatically detects and masks Aadhaar numbers in images and PDFs using OCR + image processing.  
+Built with **Python**, **Django**, **Tesseract OCR / PaddleOCR** (optional), and **OpenCV**.
 
 ---
 
-## ✨ Overview
-This project aims to protect user privacy by automatically **detecting and masking Aadhaar numbers** from uploaded images or PDFs.  
-It uses Optical Character Recognition (OCR) to locate Aadhaar numbers and then applies intelligent masking to hide the first 8 digits — ensuring that sensitive data remains secure.
+## 🔥 Demo
+> Add a short GIF or screenshot here (recommended). Example markdown:
+
+(Place `assets/demo.gif` in repo or link to an external image)
 
 ---
 
-## 🎯 Features
-- 🔍 **Automatic Aadhaar Detection** using OCR (TesseractOCR)
-- 🧠 **Regex-based filtering** to detect valid Aadhaar patterns
-- 🖼️ **Masking of digits** using OpenCV rectangle overlays
-- 📄 **Supports multiple file types** (JPG, PNG, PDF)
-- 🌐 **Web Interface** built with Django for easy uploads
-- 🏗️ Handles **tilted, low-quality, and multilingual Aadhaar cards**
+## ✨ Features
+- 🔎 Automatic Aadhaar number detection using OCR (Tesseract / PaddleOCR)  
+- 🧾 Supports multiple file types: JPG, PNG, PDF  
+- 🔐 Masks the first 8 digits and keeps last 4 visible (configurable)  
+- 🖼️ Handles tilted, low-quality, vernacular, and screenshot Aadhaar formats (improved by PaddleOCR)  
+- 🌐 Simple Django web UI for uploading files and downloading masked output  
+- 🛠️ Regex-based validation to reduce false positives
 
 ---
 
-## 🧠 Tech Stack
-| Category | Technologies Used |
-|-----------|------------------|
-| 💻 Programming Language | Python |
-| 🧩 Framework | Django |
-| 🔍 OCR Engine | TesseractOCR |
-| 🎨 Image Processing | OpenCV |
-| 🧮 Libraries | NumPy, re, Matplotlib |
-| ☁️ Deployment | Render / Hugging Face (optional) |
+## 🧰 Tech Stack
+- Language: **Python 3**
+- Web: **Django**
+- OCR: **Tesseract OCR** (or **PaddleOCR** for better multi-language/screenshot support)
+- Image processing: **OpenCV**
+- Others: `numpy`, `pytesseract` (or `paddleocr`), `Pillow`, etc.
 
 ---
 
-## ⚙️ Installation and Setup
-Follow these steps to run the project locally 👇  
+## 🚀 Quick Start (local)
+> Mac / Linux steps (Windows similar — adapt venv activation)
 
-### 1️⃣ Clone the repository
+1. Clone repository
 ```bash
 git clone https://github.com/shk-javed/Aadhaar-Masking-Tool.git
 cd Aadhaar-Masking-Tool
