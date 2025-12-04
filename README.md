@@ -42,9 +42,6 @@ Built with **Python**, **Django**, **Tesseract OCR / PaddleOCR**, and **OpenCV**
 
 ---
 
-## 🚀 Quick Start (Local)
-> Mac / Linux steps shown (Windows similar — adjust venv activation)
-
 ### 1️⃣ Clone the repository  
 ```bash
 git clone https://github.com/shk-javed/Aadhaar-Masking-Tool.git
