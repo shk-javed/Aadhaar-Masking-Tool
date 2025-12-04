@@ -8,9 +8,16 @@ https://docs.djangoproject.com/en/4.2/howto/deployment/asgi/
 """
 
 import os
+import multiprocessing
+
+# ✅ Mac & Windows safe for multiprocessing (Critical for PaddleOCR)
+try:
+    multiprocessing.set_start_method("spawn", force=True)
+except RuntimeError:
+    pass
+
 from django.core.asgi import get_asgi_application
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'aadhar_masking_project.settings')
 
-# No multiprocessing setup here! Just ASGI app
 application = get_asgi_application()

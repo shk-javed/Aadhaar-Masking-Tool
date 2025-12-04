@@ -1,21 +1,27 @@
+# Python
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
 
-# Virtual env
+# Virtual environments
 venv/
-env/
-ENV/
+.env
 
 # Django
 db.sqlite3
 media/
 staticfiles/
+
+# Logs
 *.log
-local_settings.py
+
+# macOS
+.DS_Store
 
 # IDEs
 .vscode/
 .idea/
 
-# macOS
-.DS_Store
+# Backup
+cleanup-backup-*

@@ -1,10 +1,11 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Aadhaar Masking Tool</title>
 
-  
+  <!-- ✅ Add Google Font: Poppins -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
@@ -25,11 +26,11 @@
     }
 
     #how-it-works h3:hover {
-  color: #5AB9EA;
-  transform: scale(1.02);
-  transition: 0.3s ease;
-  cursor: default;
-}
+      color: #5AB9EA;
+      transform: scale(1.02);
+      transition: 0.3s ease;
+      cursor: default;
+    }
 
 
     .finger-icon {
@@ -57,9 +58,17 @@
     }
 
     @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
     }
 
     .navbar {
@@ -114,7 +123,7 @@
       border-radius: 20px;
       cursor: pointer;
       font-weight: bold;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
       transition: background 0.3s ease;
       z-index: 999;
     }
@@ -129,16 +138,18 @@
       margin-bottom: 30px;
       text-shadow: 0 0 10px #84CEEB, 0 0 20px #5AB9EA;
     }
-form {
-  margin-top: 80px; /* ✅ Add this line for spacing from flip card */
-  margin-bottom: 40px;
-  padding: 30px;
-  border-radius: 16px;
-  backdrop-filter: blur(15px);
-  background: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2);
-  display: inline-block;
-}
+
+    form {
+      margin-top: 80px;
+      /* ✅ Add this line for spacing from flip card */
+      margin-bottom: 40px;
+      padding: 30px;
+      border-radius: 16px;
+      backdrop-filter: blur(15px);
+      background: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2);
+      display: inline-block;
+    }
 
     input[type="file"] {
       padding: 10px;
@@ -154,7 +165,7 @@ form {
       border: 2px dashed #84CEEB;
       padding: 10px;
       border-radius: 10px;
-      box-shadow: 0 0 15px rgba(255,255,255,0.2);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
       display: none;
     }
 
@@ -175,127 +186,106 @@ form {
       background: #5AB9EA;
       transform: scale(1.05);
     }
-.flip-card {
-  background-color: transparent;
-  width: 400px;
-  height: 250px;
-  margin: 30px auto;
-  perspective: 1000px;
-}
 
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 1s;
-  transform-style: preserve-3d;
-}
+    .flip-card {
+      background-color: transparent;
+      width: 400px;
+      height: 250px;
+      margin: 30px auto;
+      perspective: 1000px;
+    }
 
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 1s;
+      transform-style: preserve-3d;
+    }
 
-.flip-card-front, .flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 0 25px rgba(136, 96, 208, 0.5);
-}
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
 
-/* FRONT SIDE VIDEO */
-.flip-card-front {
-  background: black;
-}
+    .flip-card-front,
+    .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 25px rgba(136, 96, 208, 0.5);
+    }
 
-.flip-card-front video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+    /* FRONT SIDE VIDEO */
+    .flip-card-front {
+      background: black;
+    }
 
-/* BACK SIDE VIDEO */
-.flip-card-back {
-  transform: rotateY(180deg);
-  background: black;
-}
+    .flip-card-front video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-.flip-card-back video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+    /* BACK SIDE VIDEO */
+    .flip-card-back {
+      transform: rotateY(180deg);
+      background: black;
+    }
 
-  /* Smaller size */
-  width: 36px;
-  height: 36px;
+    .flip-card-back video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-  /* Glassmorphism base */
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 50%;
 
-  /* Icon styling */
-  color: #ffffff;
-  font-size: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
+    #muteToggle {
+      position: absolute;
+      top: 140px;
+      right: 43px;
+      z-index: 10;
 
-  /* 3D glossy shadow */
-  box-shadow:
-    0 4px 10px rgba(0, 0, 0, 0.4),
-    inset 1px 1px 2px rgba(255, 255, 255, 0.3),
-    inset -1px -1px 3px rgba(0, 0, 0, 0.3);
+      /* Smaller and centered */
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-  transition: all 0.3s ease;
-}
-#muteToggle {
-  position: absolute;
-  top: 140px;
-  right: 43px;
-  z-index: 10;
+      /* Glass base */
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1.5px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      color: #fff;
+      font-size: 1rem;
+      cursor: pointer;
 
-  /* Smaller and centered */
-  width: 30px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+      /* Enhanced glossy + 3D shadow */
+      box-shadow:
+        0 6px 18px rgba(0, 0, 0, 0.55),
+        /* Outer dark shadow */
+        inset 3px 3px 5px rgba(255, 255, 255, 0.35),
+        /* Inner top-left light */
+        inset -3px -3px 5px rgba(0, 0, 0, 0.3);
+      /* Inner bottom-right dark */
 
-  /* Glass base */
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1.5px solid rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
-  color: #fff;
-  font-size: 1rem;
-  cursor: pointer;
+      transition: all 0.3s ease;
+    }
 
-  /* Enhanced glossy + 3D shadow */
-  box-shadow:
-    0 6px 18px rgba(0, 0, 0, 0.55),              /* Outer dark shadow */
-    inset 3px 3px 5px rgba(255, 255, 255, 0.35), /* Inner top-left light */
-    inset -3px -3px 5px rgba(0, 0, 0, 0.3);      /* Inner bottom-right dark */
-
-  transition: all 0.3s ease;
-}
-
-#muteToggle:hover {
-  background: rgba(255, 255, 255, 0.25);
-  box-shadow:
-    0 8px 22px rgba(0, 0, 0, 0.65),
-    inset 4px 4px 6px rgba(255, 255, 255, 0.45),
-    inset -3px -3px 5px rgba(0, 0, 0, 0.25);
-  transform: scale(1.07);
-}
+    #muteToggle:hover {
+      background: rgba(255, 255, 255, 0.25);
+      box-shadow:
+        0 8px 22px rgba(0, 0, 0, 0.65),
+        inset 4px 4px 6px rgba(255, 255, 255, 0.45),
+        inset -3px -3px 5px rgba(0, 0, 0, 0.25);
+      transform: scale(1.07);
+    }
 
 
 
@@ -319,9 +309,17 @@ form {
     }
 
     @keyframes float {
-      0% { transform: translateY(0px) rotateY(0deg); }
-      50% { transform: translateY(-15px) rotateY(10deg); }
-      100% { transform: translateY(0px) rotateY(0deg); }
+      0% {
+        transform: translateY(0px) rotateY(0deg);
+      }
+
+      50% {
+        transform: translateY(-15px) rotateY(10deg);
+      }
+
+      100% {
+        transform: translateY(0px) rotateY(0deg);
+      }
     }
 
     @keyframes fadeInZoom {
@@ -338,7 +336,7 @@ form {
 
     .spinner.visible {
       display: inline-block;
-      border: 4px solid rgba(255,255,255,0.3);
+      border: 4px solid rgba(255, 255, 255, 0.3);
       border-top: 4px solid #84CEEB;
       border-radius: 50%;
       width: 40px;
@@ -347,8 +345,13 @@ form {
     }
 
     @keyframes spin {
-      0% { transform: rotate(0deg);}
-      100% { transform: rotate(360deg);}
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
     }
 
     .alert {
@@ -382,38 +385,163 @@ form {
     footer {
       margin-top: 100px;
       padding: 25px 40px;
-      background: rgba(255,255,255,0.15);
+      background: rgba(255, 255, 255, 0.15);
       backdrop-filter: blur(16px);
-      border-top: 2px solid rgba(255,255,255,0.25);
+      border-top: 2px solid rgba(255, 255, 255, 0.25);
       color: #E0E0E0;
-      font-size: 0.75em; /* ya 0.8em */
-      font-weight: 60;
+      font-size: 0.75em;
+      /* ya 0.8em */
+      font-weight: 600;
       box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.3);
       border-radius: 12px 12px 0 0;
       text-align: center;
     }
+
+    /* 🔰 Result Section */
+.result-section {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Flip card for result preview */
+.result-flip-card {
+  background-color: transparent;
+  width: clamp(720px, 65vw, 820px);  /* ⬅ wider card */
+  max-width: 95vw;
+  height: 460px;                     /* ⬅ taller card */
+  margin-top: 20px;
+  perspective: 1200px;
+}
+
+.result-flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.9s;
+  transform-style: preserve-3d;
+  border-radius: 18px;
+}
+
+.result-flip-card:hover .result-flip-inner {
+  transform: rotateY(180deg);
+}
+
+.result-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 18px;
+  overflow: hidden;
+  background: radial-gradient(circle at top left,
+              rgba(132, 206, 235, 0.22),
+              rgba(0, 0, 0, 0.85));
+  border: 1px solid rgba(132, 206, 235, 0.5);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.6);
+}
+
+/* Front side */
+.result-front {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 26px;
+}
+
+.result-front h2 {
+  font-size: 1.7em;
+  color: #84CEEB;
+  margin-bottom: 10px;
+}
+
+.result-front p {
+  font-size: 0.95em;
+  color: #E5E7EB;
+  max-width: 360px;
+}
+
+/* Back side */
+.result-back {
+  transform: rotateY(180deg);
+  padding: 16px 20px 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(3, 7, 18, 0.95);
+}
+
+/* Preview area (image or PDF) */
+.result-preview-frame {
+  flex: 1;
+  width: 100%;
+  max-height: 360px;  /* pehle 260 tha */
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(132, 206, 235, 0.7);
+  box-shadow: 0 0 22px rgba(0, 0, 0, 0.7);
+  background: #0b1120;
+}
+
+
+/* Download button inside back */
+.result-download-btn {
+  margin-top: 14px;
+  padding: 10px 22px;
+  background: linear-gradient(135deg, #84CEEB, #5AB9EA);
+  border-radius: 999px;
+  color: #020617;
+  font-weight: 700;
+  text-decoration: none;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95em;
+  box-shadow: 0 10px 30px rgba(90, 185, 234, 0.45);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.result-download-btn:hover {
+  transform: translateY(-1px) scale(1.03);
+  box-shadow: 0 15px 35px rgba(90, 185, 234, 0.6);
+}
+
+/* Small hint text */
+.result-hint {
+  margin-top: 10px;
+  font-size: 0.8em;
+  color: #cbd5f5;
+  opacity: 0.8;
+}
+
   </style>
 </head>
+
 <body>
 
-<div class="navbar">
-  <div class="navbar-logo">🔐 AadhaarMask</div>
-  <div class="navbar-links">
-    <a href="#">Validate Aadhaar</a>
-    <a href="#upload-section">Mask Aadhaar</a>
-    <a href="#how-it-works">How It Works</a>
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="navbar-logo">🔐 AadhaarMask</div>
+    <div class="navbar-links">
+      <a href="#">Validate Aadhaar</a>
+      <a href="#upload-section">Mask Aadhaar</a>
+      <a href="#how-it-works">How It Works</a>
+    </div>
   </div>
-</div>
 
+  <!-- Dark Mode -->
+  <button class="mode-toggle" onclick="toggleMode()">🌗 Mode</button>
 
-<button class="mode-toggle" onclick="toggleMode()">🌗 Mode</button>
-
-<h1 class="heading-with-icon">
-  <img src="{% static 'masking/images/finger-scanner_17462298.png' %}" alt="Fingerprint" class="finger-icon">
-  Aadhaar Masking Tool
-</h1>
-
-<button id="muteToggle" onclick="toggleMute()" style="
+  <h1 class="heading-with-icon">
+    <img src="{% static 'masking/images/finger-scanner_17462298.png' %}" alt="Fingerprint" class="finger-icon">
+    Aadhaar Masking Tool
+  </h1>
+  <!-- ✅ Mute Button (Outside Flip Card, Just Below Dark Mode Button) -->
+  <button id="muteToggle" onclick="toggleMute()" style="
   margin-top: 10px;
   margin-bottom: 15px;
   background: rgba(0,0,0,0.6);
@@ -427,195 +555,244 @@ form {
   box-shadow: 0 0 6px rgba(0,0,0,0.3);
 ">🔇</button>
 
+  <!-- ✅ Flip Card -->
+  <div class="flip-card">
+    <div class="flip-card-inner">
 
-<div class="flip-card">
-  <div class="flip-card-inner">
+      <!-- 🔷 FRONT: Aadhaar Architecture Video (WITH SOUND) -->
+      <div class="flip-card-front">
+        <video id="frontVideo" autoplay muted loop playsinline>
+          <source src="{% static 'videos/Aadhaar_Masking_System_Architecture_Video.mp4' %}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
 
-    
-    <div class="flip-card-front">
-      <video id="frontVideo" autoplay muted loop playsinline>
-        <source src="{% static 'videos/Aadhaar_Masking_System_Architecture_Video.mp4' %}" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+      <!-- 🔶 BACK: Floating Card Video (NO SOUND) -->
+      <div class="flip-card-back">
+        <video autoplay muted loop playsinline>
+          <source src="{% static 'videos/floating_card.mp4' %}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
     </div>
-
-    
-    <div class="flip-card-back">
-      <video autoplay muted loop playsinline>
-        <source src="{% static 'videos/floating_card.mp4' %}" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-
   </div>
-</div>
-<script>
-  function toggleMute() {
-    const video = document.getElementById('frontVideo');
-    const button = document.getElementById('muteToggle');
+  <script>
+    function toggleMute() {
+      const video = document.getElementById('frontVideo');
+      const button = document.getElementById('muteToggle');
 
-    // Toggle mute
-    video.muted = !video.muted;
+      // Toggle mute
+      video.muted = !video.muted;
 
-    // Update button icon
-    button.textContent = video.muted ? '🔇' : '🔊';
+      // Update button icon
+      button.textContent = video.muted ? '🔇' : '🔊';
 
-    // Ensure video plays with audio when unmuted
-    if (!video.muted) {
-      video.play().catch(e => console.log("Playback prevented:", e));
-    }
-  }
-</script>
-
-<!-- Invisible Anchor for Upload Section -->
-<div id="upload-section" style="position: relative; top: -100px;"></div>
-
-<!-- ✅ Upload Form Section -->
-<form method="POST" enctype="multipart/form-data" onsubmit="showSpinnerOnce()">
-  {% csrf_token %}
-  <label>Select Aadhaar Image:</label><br><br>
-  <input type="file" name="image" accept=".jpg,.jpeg,.png,.pdf" required onchange="previewFile(this)">
-  <br>
-  <img id="preview" src="#" alt="Preview" style="max-width:300px; display:none; margin-top:10px;">
-  <br>
-  <button type="submit">Upload & Mask</button>
-</form>
-
-<!-- Spinner -->
-<div id="spinner" class="spinner"></div>
-
-
-<!-- Preview container for images/PDFs -->
-<div id="preview-container"></div>
-
-<!-- ✅ Show masked image if available -->
-{% if masked_image_url %}
-  <h2>Masked Aadhaar:</h2>
-  <img src="{{ masked_image_url }}" alt="Masked Aadhaar" style="max-width:400px; margin-top:20px; border-radius:12px; box-shadow:0 0 25px rgba(0,0,0,0.4); border: 2px solid #84CEEB;">
-  <br>
-  <a href="{{ masked_image_url }}" download style="margin-top:15px; display:inline-block; padding:12px 28px; background:linear-gradient(90deg,#5AB9EA,#5680E9); color:white; font-weight:bold; border-radius:8px; text-shadow:0 0 8px rgba(0,0,0,0.5); box-shadow:0 0 18px rgba(0,0,0,0.3);">⬇️ Download Masked Aadhaar</a>
-{% endif %}
-
-
-{% if error %}
-  <p style="color:red; font-weight:bold;">{{ error }}</p>
-{% endif %}
-
-
-<!-- Invisible Anchor for How It Works -->
-<div id="how-it-works" style="position: relative; top: -100px;"></div>
-
-<!-- How It Works Section -->
- <section style="padding: 80px 20px; margin-top: 60px;">
-
-  <h2 style="font-size: 2.5em; color: #C1C8E4; text-shadow: 0 0 10px #84CEEB; margin-bottom: 40px;">🔍 How It Works</h2>
-
-  <div style="max-width: 800px; margin: 0 auto; text-align: left; background: rgba(255,255,255,0.05); border-radius: 16px; padding: 30px; box-shadow: 0 0 20px rgba(0,0,0,0.2);">
-
-    <div style="margin-bottom: 30px;">
-      <h3 style="color: #84CEEB;">1️ Upload Aadhaar Image</h3>
-      <p>You simply upload a photo or scan of your Aadhaar card. Supported formats: JPG, PNG, PDF (single-page).</p>
-    </div>
-
-   <div style="margin-bottom: 30px;">
-  <h3 style="color: #84CEEB;">2️ OCR Text Extraction</h3>
-  <p>The system uses <b>PaddleOCR</b> (a deep learning–based OCR engine) to extract text from the uploaded file. 
-     It is more accurate than Tesseract and works even for tilted, blurry, or vernacular Aadhaar card images.</p>
-</div>
-
-
-
-    <div style="margin-bottom: 30px;">
-      <h3 style="color: #84CEEB;">3️ Masking the First 8 Digits</h3>
-      <p>Our masking engine finds and covers the first 8 digits of the Aadhaar number with a white or blurred mask, leaving only the last 4 digits visible.</p>
-    </div>
-
-    <div>
-      <h3 style="color: #84CEEB;">4️Download Secure Copy</h3>
-      <p>You can preview and download the masked image for secure use or document submission. No data is stored on the server.</p>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- Footer -->
-<footer>© 2025 All rights reserved | www.Aadhar-masked.com - Shaikh Javed</footer>
-
-<script>
-  // File Preview Function
-  function previewFile(input) {
-    const file = input.files[0];
-    const previewContainer = document.getElementById('preview-container');
-    previewContainer.innerHTML = '';
-
-    if (file) {
-      const fileType = file.type;
-
-      if (fileType.startsWith('image/')) {
-        // 📸 Image preview
-        const reader = new FileReader();
-        reader.onload = function (e) {
-          const img = document.createElement('img');
-          img.src = e.target.result;
-          img.style.maxWidth = '300px';
-          img.style.borderRadius = '12px';
-          img.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.2)';
-          img.alt = 'Uploaded Image Preview';
-          previewContainer.appendChild(img);
-        };
-        reader.readAsDataURL(file);
-
-      } else if (fileType === 'application/pdf') {
-        // 📄 PDF preview
-        const reader = new FileReader();
-        reader.onload = function (e) {
-          const embed = document.createElement('embed');
-          embed.src = e.target.result;
-          embed.type = 'application/pdf';
-          embed.width = '100%';
-          embed.height = '500px';
-          embed.style.borderRadius = '12px';
-          previewContainer.appendChild(embed);
-        };
-        reader.readAsDataURL(file);
-
-      } else {
-        previewContainer.innerHTML = '<p style="color:red;">Unsupported file type. Please upload a JPG, PNG, or PDF.</p>';
+      // Ensure video plays with audio when unmuted
+      if (!video.muted) {
+        video.play().catch(e => console.log("Playback prevented:", e));
       }
     }
-  }
+  </script>
 
-  
-  // 🌙 Dark Mode Toggle Function
-  function toggleMode() {
-    const body = document.body;
-    body.classList.toggle('dark-mode');
-    if (body.classList.contains('dark-mode')) {
-      localStorage.setItem('theme', 'dark');
-    } else {
-      localStorage.setItem('theme', 'light');
-    }
-  }
+  <!-- Invisible Anchor for Upload Section -->
+  <div id="upload-section" style="position: relative; top: -100px;"></div>
 
-  // 🌓 Load theme on page load
-  window.onload = function () {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-      document.body.classList.add('dark-mode');
+  <!-- ✅ Upload Form Section -->
+  <form method="POST" enctype="multipart/form-data" onsubmit="showSpinnerOnce()">
+    {% csrf_token %}
+    <label>Select Aadhaar Image:</label><br><br>
+    <input type="file" name="image" accept=".jpg,.jpeg,.png,.pdf" required onchange="previewFile(this)">
+    <br>
+
+    <br>
+    <button type="submit">Upload & Mask</button>
+  </form>
+
+  <!-- Spinner -->
+  <div id="spinner" class="spinner"></div>
+
+
+  <!-- Preview container for images/PDFs -->
+  <div id="preview-container"></div>
+  <!-- Preview container for images/PDFs -->
+  <div id="preview-container"></div>
+
+{% if masked_pdf_url or masked_image_url %}
+  <div class="result-section">
+    <!-- Heading above card -->
+    <h2 style="color: #84CEEB; margin-bottom: 8px;">
+      ✅ Masking Successful
+    </h2>
+    <p style="color:#E5E7EB; font-size:0.9em; opacity:0.9;">
+      Hover / tap on the card to flip and preview your secure Aadhaar.
+    </p>
+
+    <!-- Flip card for result -->
+    <div class="result-flip-card">
+      <div class="result-flip-inner">
+
+        <!-- FRONT SIDE -->
+        <div class="result-face result-front">
+          <div style="font-size:2.5em; margin-bottom:8px;">🔐</div>
+          <h2>Masked Aadhaar Ready</h2>
+          <p>
+            We’ve safely masked the first 8 digits of your Aadhaar number,
+            keeping only the last 4 visible as per UIDAI guidelines.
+          </p>
+          <p style="margin-top:12px; font-size:0.8em; opacity:0.9;">
+            Flip this card to see the preview and download the masked copy.
+          </p>
+        </div>
+
+        <!-- BACK SIDE -->
+        <div class="result-face result-back">
+          <div class="result-preview-frame">
+            {% if masked_pdf_image_preview %}
+              <!-- PDF ka image preview (first page) -->
+              <img src="{{ masked_pdf_image_preview }}" alt="Masked Aadhaar PDF Preview"
+                   style="width:100%; height:100%; object-fit:contain;">
+            {% elif masked_image_url %}
+              <!-- Normal image preview -->
+              <img src="{{ masked_image_url }}" alt="Masked Aadhaar"
+                   style="width:100%; height:100%; object-fit:contain;">
+            {% endif %}
+          </div>
+
+          {% if masked_pdf_url %}
+            <a href="{{ masked_pdf_url }}" download class="result-download-btn">
+              ⬇️ Download Masked PDF
+            </a>
+          {% elif masked_image_url %}
+            <a href="{{ masked_image_url }}" download class="result-download-btn">
+              ⬇️ Download Masked Image
+            </a>
+          {% endif %}
+        </div>
+
+      </div>
+    </div>
+
+    <div class="result-hint">
+      Tip: On mobile, tap once to focus and tap again to flip.
+    </div>
+  </div>
+{% endif %}
+
+  <!-- Invisible Anchor for How It Works -->
+  <div id="how-it-works" style="position: relative; top: -100px;"></div>
+
+  <!-- How It Works Section -->
+  <section style="padding: 80px 20px; margin-top: 60px;">
+
+    <h2 style="font-size: 2.5em; color: #C1C8E4; text-shadow: 0 0 10px #84CEEB; margin-bottom: 40px;">🔍 How It Works
+    </h2>
+
+    <div
+      style="max-width: 800px; margin: 0 auto; text-align: left; background: rgba(255,255,255,0.05); border-radius: 16px; padding: 30px; box-shadow: 0 0 20px rgba(0,0,0,0.2);">
+
+      <div style="margin-bottom: 30px;">
+        <h3 style="color: #84CEEB;">1️ Upload Aadhaar Image</h3>
+        <p>You simply upload a photo or scan of your Aadhaar card. Supported formats: JPG, PNG, PDF (single-page).</p>
+      </div>
+
+      <div style="margin-bottom: 30px;">
+        <h3 style="color: #84CEEB;">2️ OCR Text Extraction</h3>
+        <p>The system uses <b>PaddleOCR</b> (a deep learning–based OCR engine) to extract text from the uploaded file.
+          It is more accurate than Tesseract and works even for tilted, blurry, or vernacular Aadhaar card images.</p>
+      </div>
+
+
+
+      <div style="margin-bottom: 30px;">
+        <h3 style="color: #84CEEB;">3️ Masking the First 8 Digits</h3>
+        <p>Our masking engine finds and covers the first 8 digits of the Aadhaar number with a white or blurred mask,
+          leaving only the last 4 digits visible.</p>
+      </div>
+
+      <div>
+        <h3 style="color: #84CEEB;">4️Download Secure Copy</h3>
+        <p>You can preview and download the masked image for secure use or document submission. No data is stored on the
+          server.</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer>© 2025 All rights reserved | www.Aadhar-masked.com - Shaikh Javed</footer>
+  <!-- ✅ Final JavaScript -->
+  <script>
+    // File Preview Function
+    function previewFile(input) {
+      const file = input.files[0];
+      const previewContainer = document.getElementById('preview-container');
+      previewContainer.innerHTML = '';
+
+      if (file) {
+        const fileType = file.type;
+
+        if (fileType.startsWith('image/')) {
+          // 📸 Image preview
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            const img = document.createElement('img');
+            img.src = e.target.result;
+            img.style.maxWidth = '300px';
+            img.style.borderRadius = '12px';
+            img.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.2)';
+            img.alt = 'Uploaded Image Preview';
+            previewContainer.appendChild(img);
+          };
+          reader.readAsDataURL(file);
+
+        } else if (fileType === 'application/pdf') {
+          // 📄 PDF preview
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            const embed = document.createElement('embed');
+            embed.src = e.target.result;
+            embed.type = 'application/pdf';
+            embed.width = '100%';
+            embed.height = '500px';
+            embed.style.borderRadius = '12px';
+            previewContainer.appendChild(embed);
+          };
+          reader.readAsDataURL(file);
+
+        } else {
+          previewContainer.innerHTML = '<p style="color:red;">Unsupported file type. Please upload a JPG, PNG, or PDF.</p>';
+        }
+      }
     }
-  };
-</script>
+
+
+    // 🌙 Dark Mode Toggle Function
+    function toggleMode() {
+      const body = document.body;
+      body.classList.toggle('dark-mode');
+      if (body.classList.contains('dark-mode')) {
+        localStorage.setItem('theme', 'dark');
+      } else {
+        localStorage.setItem('theme', 'light');
+      }
+    }
+
+    // 🌓 Load theme on page load
+    window.onload = function () {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+      }
+    };
+  </script>
+  <script>
+    function showSpinnerOnce() {
+      const spinner = document.getElementById("spinner");
+      spinner.classList.add("visible");
+    }
+  </script>
 </body>
-
-<script>
-  function showSpinnerOnce() {
-    const spinner = document.getElementById("spinner");
-    spinner.classList.add("visible");
-    setTimeout(() => {
-      spinner.classList.remove("visible");
-    }, 1000); // 1 second
-  }
-</script>
 
 </html>

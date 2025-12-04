@@ -82,3 +82,30 @@ MEDIA_ROOT = BASE_DIR / "media"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# --- Add to the bottom of your settings.py or merge safely ---
+
+# Path to tesseract executable (override via env var if needed)
+TESSERACT_CMD = os.environ.get('TESSERACT_CMD', '/opt/homebrew/bin/tesseract')
+# Mask style: "solid", "blur", or "pixelate"
+MASK_STYLE = os.environ.get('MASK_STYLE', 'solid')
+# PaddleOCR languages default (comma-separated names or single)
+PADDLE_OCR_LANG = os.environ.get('PADDLE_OCR_LANG', 'en')
+# OCR confidence thresholds (tweakable)
+OCR_CONF_MIN = int(os.environ.get('OCR_CONF_MIN', '30'))
+OCR_CONF_STRICT = int(os.environ.get('OCR_CONF_STRICT', '40'))
+
+import os
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+# ...
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    BASE_DIR / 'masking' / 'static',
+]
+
